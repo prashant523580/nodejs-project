@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {{>header}}
+</head>
+<body>
+    {{>nav}}
+
+    <div class="container-error">
+        <h1>{{error_msg1}}</h1>
+        <div class="content">
+
+            <div class="round">
+                <p>404</p>
+                </div>
+            <h1>{{error_msg}}</h1>
+        </div>
+        <button onclick="window.history.back()"> back</button>
+    </div>
+    {{>footer}}
+
+    {{>script_js}}
+</body>
+</html>

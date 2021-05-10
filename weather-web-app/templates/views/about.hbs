@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+{{>header}}
+</head>
+<body>
+   {{>nav}}
+
+    <!-- main header -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="row flex-d-row">
+                    <div class="col-md-6 col-12 main_header_left">
+                        <figure>
+                            <img src="./src/img/download.jfif" class="img-fluid" alt="mountain">
+                        </figure>
+                       
+                    </div>
+                    <div class="col-md-6 col-12 main_header_right">
+                        <h1 class="text-center">Welcome to weather app</h1>
+                        <p class="text-center">get latest weather information of your city </p>
+                        <a href="/weather"><button>weather</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+  {{>footer}}
+   {{>script_js}}
+</body>
+</html>

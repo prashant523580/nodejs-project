@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {{>header}}
+</head>
+
+<body>
+    {{>nav}}
+
+
+    <div class="container-fluid py-2">
+        <div class="row">
+            <div class="col-md-10">
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" id="city" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" id="submit-btn">Search</button>
+                </form>
+                <div class="temp_information">
+                    <div class="top">
+                        <p id="day">tus</p>
+                        <p id="date">0ct 23</p>
+                    </div>
+                    <div class="main">
+                        <p id="city-name">city name</p>
+                        <div class="middle">
+                            <p > <span id="temp">0</span><sup>0</sup> C</p>
+                            <p id="temp-status"> <i class="fas fa-cloud-showers-heavy"></i> </p>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{>footer}}
+    {{>script_js}}
+</body>
+
+</html>

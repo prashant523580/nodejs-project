@@ -1,2 +1,4 @@
 weather-web-app/node_modules
 weather-web-app/package-lock.json
+dynamic-website/node_modules
+dynamic-website/package-lock.json

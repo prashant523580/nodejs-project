@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            transition: all .2s ease-in-out;
+        }
+        table{
+            /* width: 100%; */
+            border: 1px ridge green;
+        }
+        table thead{
+            background-color: rgb(206, 204, 201);
+            padding: .5rem .5rem;
+            color: white;
+        }
+        table thead th{
+            text-transform: capitalize;
+            padding: .4rem .4rem;
+        }
+        table tbody tr td{
+            padding: .2rem .3rem;
+            border-bottom: 2px solid gray;
+        }
+        table tbody tr td i {
+            cursor: pointer;
+        }
+        table tbody tr td i.delete-button {
+        color: red;
+        }
+        table tbody tr td i.update-button {
+           color: green;
+        }
+        table tbody tr td i.delete-button:hover {
+        color: rgb(190, 12, 12);
+        }
+        table tbody tr td i.update-button:hover {
+           color: rgb(3, 90, 3);
+        }
+    </style>
+</head>
+<body>
+ <%- include("../partials/nav.hbs") %>
+    <!-- <div class="quotes">
+        <% for(var i = 0; i < data.length; i++) {%>
+        <div class="quote">
+
+                <h1><%= data[i].name %></h1>
+                <p><%= data[i].quote %></p>
+                <button class="delete-button" data-id="<%= data[i].id%>">delete</button>
+                <button class="update-button" data-id="<%= data[i].id%>">update</button>
+            </div>
+                <% } %>
+            </div> -->
+            <table>
+                <thead>
+
+                    <th>name</th>
+                    <th>address</th>
+                    <th colspan="2">edit</th>
+                </thead>
+                <tbody>
+                    <% for(var i = 0; i < data.length; i++) {%>
+                    <tr>
+                        <td><%= data[i].name %></td>
+                        <td><%= data[i].address %></td>
+                        <td><i class="fas fa-user-minus delete-button"  data-id="<%= data[i].id%>"></i></td>
+                        <td> <i class="fas fa-user-edit update-button" data-id="<%= data[i].id%>"></i></td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+            <form action="/update" method="put">
+                <input type="text" name="name" id="name">
+                <input type="text" name="address" id="address">
+                <button type="submit" id="update-button">submit</button>
+            </form>
+    <script src="./js/main.js"></script>
+</body>
+</html>

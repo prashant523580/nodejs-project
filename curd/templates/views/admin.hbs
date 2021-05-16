@@ -4,15 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{>style_link}}
     <title>Document</title>
 </head>
 <body>
     {{>nav}}
+    <div class="form-container">
+        <h1>add data</h1>
 <form action="/register" method="POST">
-  <input type="text" placeholder="name" name="name">
-  <input type="text" placeholder="quote" name="address">
+  <input type="text" placeholder="name" class="form-input" name="name">
+  <input type="text" placeholder="address" class="form-input" name="address">
+  <input type="text" placeholder="email" name="email" class="form-input">
+  <input type="tel" placeholder="number" name="phone" class="form-input">
+  <input type="date" name="dob", class="form-input">
   <button type="submit">Submit</button>
   </form>
+    </div>
   <script src="./js/main.js"></script>
 </body>
 </html>

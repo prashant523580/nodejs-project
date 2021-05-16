@@ -4,49 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+   
     <title>Document</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: sans-serif;
-            transition: all .2s ease-in-out;
-        }
-        table{
-            /* width: 100%; */
-            border: 1px ridge green;
-        }
-        table thead{
-            background-color: rgb(206, 204, 201);
-            padding: .5rem .5rem;
-            color: white;
-        }
-        table thead th{
-            text-transform: capitalize;
-            padding: .4rem .4rem;
-        }
-        table tbody tr td{
-            padding: .2rem .3rem;
-            border-bottom: 2px solid gray;
-        }
-        table tbody tr td i {
-            cursor: pointer;
-        }
-        table tbody tr td i.delete-button {
-        color: red;
-        }
-        table tbody tr td i.update-button {
-           color: green;
-        }
-        table tbody tr td i.delete-button:hover {
-        color: rgb(190, 12, 12);
-        }
-        table tbody tr td i.update-button:hover {
-           color: rgb(3, 90, 3);
-        }
-    </style>
+<%- include("../partials/style_link.hbs") %>
 </head>
 <body>
  <%- include("../partials/nav.hbs") %>
@@ -66,6 +26,9 @@
 
                     <th>name</th>
                     <th>address</th>
+                    <th>email</th>
+                    <th>phone number</th>
+                   <th>D.O.B</th>
                     <th colspan="2">edit</th>
                 </thead>
                 <tbody>
@@ -73,17 +36,27 @@
                     <tr>
                         <td><%= data[i].name %></td>
                         <td><%= data[i].address %></td>
+                        <td><%= data[i].email %></td>
+                        <td><%= data[i].phone %></td>
+                        <td><%= data[i].dob %></td>
                         <td><i class="fas fa-user-minus delete-button"  data-id="<%= data[i].id%>"></i></td>
                         <td> <i class="fas fa-user-edit update-button" data-id="<%= data[i].id%>"></i></td>
                     </tr>
                     <% } %>
                 </tbody>
             </table>
-            <form action="/update" method="put">
-                <input type="text" name="name" id="name">
-                <input type="text" name="address" id="address">
-                <button type="submit" id="update-button">submit</button>
-            </form>
+            <div id="update-form">
+
+                <div class="close-btn" onclick="this.parentElement.style.display ='none'"><i class="far fa-times-circle"></i></div>
+                <form action="/update" method="put">
+                    <input type="text" name="name"  class="form-input" id="name">
+                    <input type="text" name="address" class="form-input"  id="address">
+                    <input type="text" placeholder="email" name="email" id="email" class="form-input">
+                    <input type="tel" placeholder="number" name="phone" id="phone" class="form-input">
+                    <input type="date" name="dob", class="form-input" id="dob">
+                    <button type="submit" id="update-button">submit</button>
+                </form>
+            </div>
     <script src="./js/main.js"></script>
 </body>
 </html>

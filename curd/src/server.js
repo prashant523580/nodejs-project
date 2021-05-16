@@ -13,7 +13,7 @@ const static_path = path.join(__dirname,"../public");
 const templates_path = path.join(__dirname,"../templates/views");
 const partial_path = path.join(__dirname,"../templates/partials");
 
-// app.set("view engine", "hbs");
+app.set("view engine", "hbs");
 app.set("view engine", "ejs");
 app.set("views", templates_path);
 app.use(express.static(static_path));
@@ -41,10 +41,8 @@ app.get("/admin", (req,res) => {
 app.post("/register",async (req,res) => {
     try{
 
-        const data = new User_collection({
-            name: req.body.name,
-            address: req.body.address
-        });
+        const data = new User_collection(req.body);
+        console.log(data)
         await data.save();
         // res.render("index.ejs");
         res.render("admin.hbs");
@@ -64,7 +62,10 @@ app.put("/update", async(req,res) => {
             {
                 $set:{
                     name : req.body.name,
-                    address : req.body.address
+                    address : req.body.address,
+                    email : req.body.email,
+                    phone: req.body.phone,
+                    dob: req.body.dob
                 }
             },
             {

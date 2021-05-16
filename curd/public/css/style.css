@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    transition: all .2s ease-in-out;
+}
+
+
+
+nav{
+    width: 100%;
+    background-color: rgb(6, 96, 138);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav a{
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: .3rem .3rem;
+    color: white;
+}
+nav a:hover{
+    transform: translateY(1px);
+    -webkit-transform: translateY(1px);
+    -moz-transform: translateY(1px);
+    -ms-transform: translateY(1px);
+    -o-transform: translateY(1px);
+}
+
+form{
+    /* background-color: rgba(11, 112, 143, 0.754); */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+form .form-input{
+        width: 40%;
+        padding: .5rem .4rem;
+        margin: .8rem;
+        border-radius:5px ;
+        -webkit-border-radius:5px ;
+        -moz-border-radius:5px ;
+        -ms-border-radius:5px ;
+        -o-border-radius:5px ;
+        border: 0;
+        outline: 0;
+        border-bottom: 2px solid gray;
+}
+form .form-input:focus{
+    box-shadow: 0 0 4px 0 gray;
+}
+form button{
+    border: 0;
+    outline: 0;
+    padding: .5rem .5rem;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    color: white;
+    background-color: rgb(6, 109, 177);
+    cursor: pointer;
+}
+form button:hover{
+    background-color: rgb(1, 74, 123);
+}
+table{
+    width: 100%;
+    /* border: 1px ridge green; */
+    /* border-collapse: collapse; */
+}
+table thead{
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+table thead th{
+    padding: .5rem 0;
+    text-transform: capitalize;
+}
+table thead tr{
+    border: 2px solid gray;
+}
+table tbody tr td{
+    padding: .2rem .3rem;
+    border-bottom: 2px solid gray;
+}
+table tbody tr td i {
+    cursor: pointer;
+}
+table tbody tr td i.delete-button {
+color: red;
+}
+table tbody tr td i.update-button {
+   color: green;
+}
+table tbody tr td i.delete-button:hover {
+color: rgb(190, 12, 12);
+}
+table tbody tr td i.update-button:hover {
+   color: rgb(3, 90, 3);
+}
+#update-form{
+    display: none;
+    position:fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background-color: rgb(12, 63, 87);
+}
+#update-form form{
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    -webkit-transform:translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%);
+    -o-transform:translate(-50%,-50%);
+    -webkit-transform:  translateY();
+}
+#update-form .close-btn{
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    color: red;
+    cursor: pointer;
+}
+#update-form .close-btn:hover{
+    color: rgb(146, 1, 1);
+}
+#update-form .form-input{
+    padding: .5rem .5rem;
+}
+@media screen and (max-width:580px) {
+    table thead th{
+        padding: .1rem 0;
+        font-size: .7rem;
+    }
+    table tbody tr td{
+        font-size: .6rem;
+    }
+}
+@media screen and (max-width:480px) {
+    table thead th{
+        padding: .1rem 0;
+        font-size: .6rem;
+    }
+    table tbody tr td{
+        font-size: .5rem;
+    }
+}
